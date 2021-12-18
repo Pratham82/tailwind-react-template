@@ -1,24 +1,27 @@
-export default function Card() {
+import joinName from '../utils/joinName'
+
+export default function Card({
+  userData: {
+    name,
+    picture: { large },
+    dob: { age },
+    location: { city },
+  },
+}) {
   return (
-    <div
-      className="bg-slate-100  flex flex-row
-      pr-5 mx-5 rounded-lg shadow-lg
-    "
-    >
-      <img
-        src="https://avatars.githubusercontent.com/u/13178080?v=4"
-        alt=""
-        className="w-1/6 h-1/6 rounded-l-lg"
-      />
-      <div className="flex flex-col px-4 py-4">
-        <blockquote className="text-left ">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-        </blockquote>
-        <figcaption className="text-left pt-2">
-          <h1 className="text-blue-500">Prathamesh Mali</h1>
-          <h1 className="text-sm">Software Developer, Edstem Technologies</h1>
-        </figcaption>
+    <div className="bg-slate-100 sm:w-2/6 md:w-2/6 lg:w-1/6 flex flex-col justify-center items-center shadow-slate-300 shadow-lg m-4 p-4 rounded-md hover:scale-105 transition ease-in cursor-pointer">
+      <div>
+        <img
+          src={large}
+          alt={joinName(name)}
+          className="rounded-full shadow-lg"
+        />
+      </div>
+      <div className="text-base text-slate-600 pt-3">{joinName(name)}</div>
+      <div className="text-sm text-slate-500 font-bold"> {city} 📍</div>
+
+      <div className="text-sm text-slate-500 pt-1">
+        Age: <span className="font-bold">{age}</span>
       </div>
     </div>
   )
