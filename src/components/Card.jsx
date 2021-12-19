@@ -1,4 +1,5 @@
 import joinName from '../utils/joinName'
+import Button from './Button'
 
 export default function Card({
   userData: {
@@ -9,7 +10,7 @@ export default function Card({
   },
 }) {
   return (
-    <div className="bg-slate-100 sm:w-2/6 md:w-2/6 lg:w-1/6 flex flex-col justify-center items-center shadow-slate-300 shadow-lg m-4 p-4 rounded-md hover:scale-105 transition ease-in cursor-pointer">
+    <div className="bg-slate-100 sm:w-2/6 lg:w-1/6 flex flex-col justify-center items-center shadow-slate-300 shadow-lg m-4 p-4 rounded-md hover:scale-105 transition ease-in cursor-pointer">
       <div>
         <img
           src={large}
@@ -23,6 +24,7 @@ export default function Card({
       <div className="text-sm text-slate-500 pt-1">
         Age: <span className="font-bold">{age}</span>
       </div>
+      <Button text="PROFILE" bgColor="blue" textColor="white" />
     </div>
   )
 }
