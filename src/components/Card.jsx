@@ -24,7 +24,7 @@ export default function Card({
       <div className="text-sm text-slate-500 pt-1">
         Age: <span className="font-bold">{age}</span>
       </div>
-      <Button text="PROFILE" bgColor="blue" textColor="white" />
+      <Button text="PROFILE" />
     </div>
   )
 }
