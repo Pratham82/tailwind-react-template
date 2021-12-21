@@ -13,7 +13,7 @@ export default function CardList() {
     fetchData(URL)
   }, [])
   return (
-    <div className="flex flex-wrap justify-center p-5 mt-8 ">
+    <div className="flex flex-wrap justify-center p-5 mt-8 mx-auto">
       {!data
         ? 'Fetching Users...'
         : data.map(user => <Card userData={user} key={user.login.uuid} />)}
